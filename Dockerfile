@@ -28,4 +28,5 @@ RUN \
     curl --location https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.xz | tar --directory /opt --extract -J --file - && \
     ln --symbolic --force /opt/node-v8.11.2-linux-x64 /usr/local/sbin
 COPY README.md /root/
+WORKDIR /root
 ENTRYPOINT bash
