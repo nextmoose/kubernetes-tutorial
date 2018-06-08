@@ -24,7 +24,7 @@ the iso file ever time repeatedly.
 2. You will get a shell script from which you can execute commands in the context of the container.
 
 ### From inside the container
-1. Open your browser `chromium-browser`.
+1. Open your browser `chromium-browser --no-sandbox`.
 2. Create a minikube cluster.  Execute these commands
 ```
 minikube start --vm-driver virtualbox &&
