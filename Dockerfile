@@ -15,5 +15,11 @@ RUN \
     sudo dnf install --assumeyes gcc kernel-devel kernel-headers dkms make bzip2 perl kernel-devel-$(uname -r) && \ 
     sudo dnf install --assumeyes VirtualBox-5.2 && \
     sudo /sbin/vboxconfig
+RUN \
+    dnf --assumeyes install dnf-plugins-core && \
+    sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo && \
+    sudo dnf install --assumeyes docker-ce && \
+    sudo dnf install --assumeyes docker-ce-18.03.1.ce && \
+    true
 RUN dnf install --assumeyes recordmydesktop
 ENTRYPOINT bash
