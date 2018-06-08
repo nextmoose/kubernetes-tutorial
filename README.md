@@ -74,6 +74,15 @@ Now reload the page.  You should see your changes.
 docker container rm --force kubernetes-tutorial &&
     docker volume rm kubernetes-tutorial
 ```
+
+## Discussion
+1. The container uses the `net=host` as a kludge solution to some networking issues.
+   This means that the container's network is the host's network.
+   This is OK for a tutorial, but it goes against the isolation value that containerization brings us.
+   For example, if we ran two containers simultaneously, they would probably conflict.
+   If we could figure a way to not need `net=host` this would be cooler.
+2. Can we use kvm instead of VirtualBox for virtualization?
+3. Can we use docker virtualization (securely)?
  
 
 
