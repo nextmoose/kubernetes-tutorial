@@ -33,17 +33,17 @@ minikube start --vm-driver virtualbox &&
     minikube dashboard --url
 ```
 Then visit the page referenced in the dashboard output. 
-2. Create your node application.  Run
+3. Create your node application.  Run
 ```
 node server.js
 ```
 and visit http://localhost:8080.  Then kill the node application by Ctrl-S.
-3. Create a Docker Image
+4. Create a Docker Image
 ```
 eval $(minikube docker-env --shell sh) &&
     docker build -t hello-node:v1
 ```
-4. Create a Deployment
+5. Create a Deployment
 ```
 kubectl run hello-node --image=hello-node:v1 --port=8080 &&
     kubectl get deployments &&
@@ -51,22 +51,22 @@ kubectl run hello-node --image=hello-node:v1 --port=8080 &&
     kubectl get events &&
     kubectl config view
 ```
-5. Create a Service
+6. Create a Service
 ```
 kubectl expose deployment hello-node --type=LoadBalancer &&
     kubectl get services &&
     minikube service hello-node
 ```
 Then visit the page referenced in the dashboard output.
-6. Update your app.
+7. Update your app.
 ```
 emacs server.js &&
     docker build -t hello-node:v2 . &&
     kubectl set image deployment/hello-node hello-node=hello-node:v2
 ```
 Now reload the page.  You should see your changes.
-7. Addons.  You can try them out see https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons
-8. Cleanup.  You can clean things up if you like https://kubernetes.io/docs/tutorials/hello-minikube/#clean-up, but you don't have to.  Remember everything is running in a container.  When you are tired of it, you can stop and remove the container.
+8. Addons.  You can try them out see https://kubernetes.io/docs/tutorials/hello-minikube/#enable-addons
+9. Cleanup.  You can clean things up if you like https://kubernetes.io/docs/tutorials/hello-minikube/#clean-up, but you don't have to.  Remember everything is running in a container.  When you are tired of it, you can stop and remove the container.
 ```
 docker container rm --force kubernetes-tutorial &&
     docker volume rm kubernetes-tutorial
