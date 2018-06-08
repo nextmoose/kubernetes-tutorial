@@ -39,6 +39,7 @@ Then visit the page referenced in the dashboard output.
 node server.js
 ```
 and visit http://localhost:8080.  Then kill the node application by Ctrl-S.
+
 4. Create a Docker Image
 ```
 eval $(minikube docker-env --shell sh) &&
@@ -59,6 +60,7 @@ kubectl expose deployment hello-node --type=LoadBalancer &&
     minikube service hello-node
 ```
 Then visit the page referenced in the dashboard output.
+
 7. Update your app.
 ```
 emacs server.js &&
