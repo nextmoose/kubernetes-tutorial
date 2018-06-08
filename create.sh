@@ -1,6 +1,7 @@
 #!/bin/sh
 
-docker \
+sudo \
+    docker \
     container \
     create \
     --name kubernetes-tutorial \
