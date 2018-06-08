@@ -12,9 +12,9 @@ RUN \
     --location \
     --output /etc/yum.repos.d/virtualbox.repo \
     https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo && \
-    sudo dnf install --assumeyes gcc kernel-devel kernel-headers dkms make bzip2 perl kernel-devel-$(uname -r) && \ 
-    sudo dnf install --assumeyes VirtualBox-5.2 && \
-    sudo /sbin/vboxconfig
+    dnf install --assumeyes gcc kernel-devel kernel-headers dkms make bzip2 perl kernel-devel-$(uname -r) && \ 
+    dnf install --assumeyes VirtualBox-5.2 && \
+    /sbin/vboxconfig
 RUN dnf install --assumeyes libvirt-daemon-kvm qemu-kvm
 RUN \
     dnf --assumeyes install dnf-plugins-core && \
