@@ -14,6 +14,6 @@ sudo \
     --mount type=bind,source=/dev/vboxdrv,destination=/dev/vboxdrv,readonly=true \
     --mount type=bind,source=/dev/vboxdrvu,destination=/dev/vboxdrvu,readonly=true \
     --mount type=bind,source=/dev/vboxnetctl,destination=/dev/vboxnetctl,readonly=true \
-    --mount type=volume,source=kubernetes-tutorial,destination=/root,readonly=true \
+    --mount type=volume,source=kubernetes-tutorial,destination=/root \
     --privileged \
     kubernetes-tutorial:$(git rev-parse HEAD)
