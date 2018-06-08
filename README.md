@@ -33,6 +33,7 @@ minikube start --vm-driver virtualbox &&
     minikube dashboard --url
 ```
 Then visit the page referenced in the dashboard output. 
+
 3. Create your node application.  Run
 ```
 node server.js
