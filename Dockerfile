@@ -21,4 +21,6 @@ RUN \
     dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo && \
     dnf install --assumeyes docker-ce docker-ce-18.03.1.ce
 RUN dnf install --assumeyes recordmydesktop
+RUN dnf install --assumeyes firefox
+RUN dnf install --assumeyes emacs*
 ENTRYPOINT bash
