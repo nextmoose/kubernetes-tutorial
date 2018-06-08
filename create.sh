@@ -10,6 +10,6 @@ sudo \
     --mount type=bind,source=/var/run/docker.sock,destination=/var/run/docker.sock,readonly=true \
     --mount type=bind,source=/dev/vboxdrv,destination=/dev/vboxdrv,readonly=true \
     --mount type=bind,source=/dev/vboxdrvu,destination=/dev/vboxdrvu,readonly=true \
-    --mount type=bind,source=/dev/vboxdnetctl,destination=/dev/vboxnetctl,readonly=true \
+    --mount type=bind,source=/dev/vboxnetctl,destination=/dev/vboxnetctl,readonly=true \
     --privileged \
     kubernetes-tutorial:$(git rev-parse HEAD)
