@@ -26,7 +26,7 @@ RUN dnf install --assumeyes emacs*
 RUN dnf install --assumeyes chromium
 RUN \
     curl --location https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.xz | tar --directory /opt --extract -J --file - && \
-    ln --symbolic --force /opt/node-v8.11.2-linux-x64 /usr/local/sbin
+    ln --symbolic --force /opt/node-v8.11.2-linux-x64/bin/* /usr/local/sbin
 RUN dnf install --assumeyes gnome-terminal less
 WORKDIR /usr/local/src
 ENTRYPOINT bash
