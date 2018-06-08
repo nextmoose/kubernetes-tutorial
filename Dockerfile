@@ -27,7 +27,7 @@ RUN dnf install --assumeyes chromium
 RUN \
     curl --location https://nodejs.org/dist/v8.11.2/node-v8.11.2-linux-x64.tar.xz | tar --directory /opt --extract -J --file - && \
     ln --symbolic --force /opt/node-v8.11.2-linux-x64 /usr/local/sbin
-RUN dnf install --assumeyes gnome-terminal
+RUN dnf install --assumeyes gnome-terminal less
 WORKDIR /usr/local/src
 ENTRYPOINT bash
 COPY server.js README.md /usr/local/src/
